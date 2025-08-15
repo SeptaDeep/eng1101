@@ -2,74 +2,72 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
-<title>AI Quiz - No extra bottom</title>
+<title>AI Quiz - Clean Layout</title>
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <style>
-body{
-  background:linear-gradient(135deg,#89f7fe,#66a6ff);
-  margin:0;
-  padding:0;
-  min-height:100vh;
-  box-sizing:border-box;
+body {
+  background: #fff; /* Plain white: कोई भी gradient, blue, etc नहीं होगा */
+  margin: 0;
+  padding: 0;
 }
-.quiz-container{
-  max-width:750px;
-  margin:32px auto;
-  padding:20px;
-  background:#fff;
-  border-radius:16px;
-  box-shadow:0 8px 20px rgba(0,0,0,0.11);
-  position:relative;
+.quiz-container {
+  max-width: 750px;
+  margin: 32px auto;
+  padding: 20px;
+  background: #fff;
+  border-radius: 16px;
+  box-shadow: 0 8px 20px rgba(0,0,0,0.11);
+  position: relative;
 }
-.quiz-header{display:flex;justify-content:space-between;align-items:center;margin-bottom:14px;}
-#timer{color:#d32f2f;font-weight:bold;}
-#progress-bar-wrap{flex:1;margin-right:15px;}
-#progress-label{font-size:0.98rem;margin-bottom:4px;}
-#progress-bar{background:#eee;border-radius:6px;height:9px;overflow:hidden;}
-#progress{height:100%;background:#4caf50;width:0%;transition:width 0.5s;}
-#question-text{font-size:1.16rem;font-weight:600;margin-bottom:12px;color:#232f3e;}
-.option-btn{
-  width:100%;
-  padding:10px;
-  margin-bottom:8px;
-  border:none;
-  border-radius:7px;
-  background:#f0f0f0;
-  cursor:pointer;
-  text-align:left;
-  display:flex;align-items:center;
-  font-size:0.99rem;
+.quiz-header { display: flex; justify-content: space-between; align-items: center; margin-bottom: 14px; }
+#timer { color: #d32f2f; font-weight: bold; }
+#progress-bar-wrap { flex: 1; margin-right: 15px; }
+#progress-label { font-size: 0.98rem; margin-bottom: 4px; }
+#progress-bar { background: #eee; border-radius: 6px; height: 9px; overflow: hidden; }
+#progress { height: 100%; background: #4caf50; width: 0%; transition: width 0.5s; }
+#question-text { font-size: 1.16rem; font-weight: 600; margin-bottom: 12px; color: #232f3e; }
+.option-btn {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 8px;
+  border: none;
+  border-radius: 7px;
+  background: #f0f0f0;
+  cursor: pointer;
+  text-align: left;
+  display: flex; align-items: center;
+  font-size: 0.99rem;
   transition: all 0.25s;
 }
-.option-btn:hover{background:#e5edfe;transform:scale(1.015);}
-.option-label{
-  background:#1976d2;
-  color:#fff;
-  padding:6px 12px;
-  border-radius:4px;
-  margin-right:10px;
-  font-weight:bold;
-  min-width:32px;text-align:center;
-  user-select:none;
-  font-size:1rem;
+.option-btn:hover { background: #e5edfe; transform: scale(1.015); }
+.option-label {
+  background: #1976d2;
+  color: #fff;
+  padding: 6px 12px;
+  border-radius: 4px;
+  margin-right: 10px;
+  font-weight: bold;
+  min-width: 32px; text-align: center;
+  user-select: none;
+  font-size: 1rem;
 }
-.correct{background:#4caf50 !important;color:#fff !important;}
-.wrong{background:#e53935 !important;color:#fff !important;}
-#feedback{margin-top:10px;font-weight:bold;min-height:24px;}
-#correct-answer{margin-top:6px;color:#1565c0;font-weight:bold;min-height:22px;}
-#next-btn,#retry-btn{
-  margin-top:18px;
-  background:#1976d2;
-  color:#fff;
-  border:none;
-  padding:10px 19px;
-  border-radius:8px;
-  cursor:pointer;
-  font-size:1.01rem;
-  box-shadow:0 3px 10px rgba(25,118,210,0.19);
-  transition:0.3s;
+.correct { background: #4caf50 !important; color: #fff !important; }
+.wrong { background: #e53935 !important; color: #fff !important; }
+#feedback { margin-top: 10px; font-weight: bold; min-height: 24px;}
+#correct-answer { margin-top: 6px; color: #1565c0; font-weight: bold; min-height: 22px;}
+#next-btn,#retry-btn {
+  margin-top: 18px;
+  background: #1976d2;
+  color: #fff;
+  border: none;
+  padding: 10px 19px;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 1.01rem;
+  box-shadow: 0 3px 10px rgba(25,118,210,0.19);
+  transition: 0.3s;
 }
-#next-btn:hover,#retry-btn:hover{background:#125a9e;transform:scale(1.06);}
+#next-btn:hover,#retry-btn:hover { background: #125a9e; transform: scale(1.06);}
 @media (max-width:600px){
   .quiz-container{max-width:99vw;padding:10px;}
   #question-text{font-size:1.08rem;}
@@ -79,6 +77,7 @@ body{
 </style>
 </head>
 <body>
+
 <div class="quiz-container" id="question-box">
   <div class="quiz-header">
     <div id="progress-bar-wrap">
